@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
+      ./hardware-configuration-vm-desktop.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -25,6 +25,10 @@
   services.xserver = {
     xkb.layout = "fr";
   }; 
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
 
   # Enable sound.
   # services.pulseaudio.enable = true;
