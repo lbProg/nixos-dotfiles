@@ -14,11 +14,9 @@
     };
   };
 
-  programs.neovim = {
+  programs.vim = {
     enable = true;
-    extraConfig = ''
-      set number
-    '';
+    plugins = with pkgs.vimPlugins; [ vim-airline ];
   };
 
   programs.bash = {
