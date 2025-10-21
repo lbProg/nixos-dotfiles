@@ -14,6 +14,13 @@
     };
   };
 
+  programs.neovim = {
+    enable = true;
+    extraConfig = ''
+      set number
+    '';
+  };
+
   programs.bash = {
     enable = true;
     profileExtra = ''
