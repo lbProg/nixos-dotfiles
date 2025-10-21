@@ -61,6 +61,7 @@
     vim
     wget
     kitty
+    home-manager
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
