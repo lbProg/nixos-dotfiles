@@ -47,10 +47,9 @@
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
       tree
+      kdePackages.falkon
     ];
   };
-
-  programs.firefox.enable = true;
 
   programs.hyprland = {
     enable = true;
