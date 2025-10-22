@@ -16,3 +16,5 @@ fi
 ln -nsf "$THEME_PATH/"*"" "$CURRENT_THEME_DIR"
 
 hyprctl reload
+
+bash nixos-theme-set-terminal

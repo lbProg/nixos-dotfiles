@@ -31,17 +31,7 @@ in
     '';
   };
 
-  # programs.kitty = {
-  #   enable = true;
-  # };
-
-  # home.file.".config/kitty".source = config.lib.file.mkOutOfStoreSymlink "/home/lucien/nixos-dotfiles/config/kitty";
-  # xdg.configFile = {
-  #   kitty = {
-  #     source = config.lib.file.mkOutOfStoreSymlink "/home/lucien/nixos-dotfiles/config/kitty/";
-  #     recursive = true;
-  #   };
-  # };
+  home.sessionPath = [ "/home/lucien/nixos-dotfiles/bin" ];
 
   home.file = {
     ".config/kitty".source = "${dotfiles}/kitty";
