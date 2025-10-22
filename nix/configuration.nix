@@ -62,6 +62,7 @@
     wget
     kitty
     home-manager
+    unzip
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

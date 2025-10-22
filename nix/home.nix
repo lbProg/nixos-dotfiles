@@ -9,6 +9,11 @@ in
   home.homeDirectory = "/home/lucien";
   home.stateVersion = "25.05";
 
+  home.packages = with pkgs; [
+    btop
+    nixpkgs-fmt
+  ];
+
   programs.git = {
     enable = true;
     userName = "Lucien";
