@@ -3,7 +3,7 @@
 {
   imports =
     [
-      ./hardware-configuration-vm-desktop.nix
+      ./hardware-configuration-vm-laptop-1.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -24,7 +24,7 @@
 
   services.xserver = {
     xkb.layout = "fr";
-  }; 
+  };
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
