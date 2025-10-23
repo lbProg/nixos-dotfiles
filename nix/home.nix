@@ -52,5 +52,6 @@ in
     ".config/hypr".source = "${dotfiles}/hypr";
     ".config/waybar".source = "${dotfiles}/waybar";
     ".config/btop".source = "${dotfiles}/btop";
+    ".config/nvim".source = "${dotfiles}/nvim";
   };
 }
