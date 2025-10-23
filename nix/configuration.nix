@@ -51,6 +51,10 @@
     ];
   };
 
+  environment.variables = {
+    TERMINAL = "kitty";
+  };
+
   programs.hyprland = {
     enable = true;
     withUWSM = true;

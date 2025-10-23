@@ -37,9 +37,6 @@ in
     '';
   };
 
-  # gtk.cursorTheme.Package = pkgs.bibata-cursors;
-  # gtk.cursorTheme.Name = "Bibata-Modern-Ice";
-
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
