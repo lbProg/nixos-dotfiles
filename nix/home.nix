@@ -53,5 +53,6 @@ in
   home.file = {
     ".config/kitty".source = "${dotfiles}/kitty";
     ".config/hypr".source = "${dotfiles}/hypr";
+    ".config/waybar".source = "${dotfiles}/waybar";
   };
 }
