@@ -51,5 +51,6 @@ in
     ".config/kitty".source = "${dotfiles}/kitty";
     ".config/hypr".source = "${dotfiles}/hypr";
     ".config/waybar".source = "${dotfiles}/waybar";
+    ".config/btop".source = "${dotfiles}/btop";
   };
 }

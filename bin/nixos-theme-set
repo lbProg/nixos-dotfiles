@@ -14,9 +14,11 @@ fi
 
 # Update theme symlinks
 ln -nsf "$THEME_PATH/"*"" "$CURRENT_THEME_DIR"
+ln -nsf "/home/lucien/.config/theming/current/theme/btop.theme" "/home/lucien/.config/btop/themes/btop.theme"
 
 bash nixos-restart-app waybar
 
 hyprctl reload
 
+pkill -SIGUSR2 btop
 bash nixos-theme-set-terminal
