@@ -22,5 +22,5 @@ bash nixos-restart-app waybar
 hyprctl reload
 
 pkill -SIGUSR2 btop
-bash nixos-theme-set-terminal
 bash nixos-restart-nvim
+bash nixos-theme-set-terminal
