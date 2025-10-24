@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ...}:
+{ config, lib, pkgs, inputs, ...}:
 
 let
   dotfiles = config.lib.file.mkOutOfStoreSymlink "/home/lucien/nixos-dotfiles/config";
@@ -41,6 +41,20 @@ in
     '';
   };
 
+  imports = [ inputs.walker.homeManagerModules.default ];
+  programs.walker = {
+    enable = true;
+    config = {
+      theme = "nixos-default";
+    };
+
+    themes = {
+      "nixos-default" = {
+        style = builtins.readFile "${config.home.homeDirectory}/nixos-dotfiles/default/walker/style.css";
+      };
+    };
+  };
+
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
@@ -57,5 +71,6 @@ in
     ".config/waybar".source = "${dotfiles}/waybar";
     ".config/btop".source = "${dotfiles}/btop";
     ".config/nvim".source = "${dotfiles}/nvim";
+    #".config/walker/themes".source = "${dotfiles}/walker/themes";
   };
 }
