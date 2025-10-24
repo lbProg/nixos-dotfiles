@@ -67,6 +67,8 @@
     kitty
     home-manager
     unzip
+    gcc
+    nodejs
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
