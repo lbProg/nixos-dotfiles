@@ -13,6 +13,7 @@ in
     btop
     nixpkgs-fmt
     waybar
+    neovim-remote
   ];
 
   programs.git = {
@@ -34,6 +35,9 @@ in
       if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
         exec uwsm start -S hyprland-uwsm.desktop
       fi
+    '';
+    initExtra = ''
+      source ~/nixos-dotfiles/default/bashrc
     '';
   };
 

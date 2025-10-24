@@ -15,6 +15,7 @@ fi
 # Update theme symlinks
 ln -nsf "$THEME_PATH/"*"" "$CURRENT_THEME_DIR"
 ln -nsf "/home/lucien/.config/theming/current/theme/btop.theme" "/home/lucien/.config/btop/themes/btop.theme"
+ln -nsf "/home/lucien/.config/theming/current/theme/neovim.lua" "/home/lucien/.config/nvim/lua/plugins/neovim.lua"
 
 bash nixos-restart-app waybar
 
@@ -22,3 +23,4 @@ hyprctl reload
 
 pkill -SIGUSR2 btop
 bash nixos-theme-set-terminal
+bash nixos-restart-nvim

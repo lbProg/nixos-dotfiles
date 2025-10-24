@@ -1,0 +1,1 @@
+/home/lucien/.config/theming/current/theme/neovim.lua
