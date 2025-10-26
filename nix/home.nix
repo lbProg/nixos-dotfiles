@@ -14,6 +14,7 @@ in
     nixpkgs-fmt
     waybar
     neovim-remote
+    librewolf
   ];
 
   programs.git = {

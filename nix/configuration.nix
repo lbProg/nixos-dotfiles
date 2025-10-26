@@ -4,7 +4,8 @@
   imports =
     [
       # ./hardware-configuration-vm-laptop-1.nix
-      ./hardware-configuration-vm-desktop.nix
+      # ./hardware-configuration-vm-desktop.nix
+      ./hardware-configuration-grenoble.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -53,6 +54,7 @@
 
   environment.variables = {
     TERMINAL = "kitty";
+    BROWSER = "librewolf";
   };
 
   programs.hyprland = {
@@ -69,6 +71,7 @@
     unzip
     gcc
     nodejs
+    brightnessctl
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
