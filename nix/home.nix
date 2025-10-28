@@ -37,8 +37,6 @@ in
       if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
         exec uwsm start -S hyprland-uwsm.desktop
       fi
-
-      swayosd-server
     '';
     initExtra = ''
       source ~/nixos-dotfiles/default/bashrc
@@ -48,6 +46,7 @@ in
   imports = [ inputs.walker.homeManagerModules.default ];
   programs.walker = {
     enable = true;
+    runAsService = true;
     config = {
       theme = "nixos-default";
     };
@@ -58,6 +57,21 @@ in
       };
     };
   };
+
+  #services.elephant = {
+  #  enable = true;
+  #  runAsService = true;
+  #};
+
+  #systemd.user.services.walker = {
+  #  Install.WantedBy = [ "default.target" ];
+
+  #  Service.ExecStart = ''
+  #    ${pkgs.walker}/bin/walker walker --gapplication-service
+  #  '';
+  #};
+
+  # services.walker.enable = true;
 
   home.pointerCursor = {
     gtk.enable = true;
