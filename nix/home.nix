@@ -78,5 +78,6 @@ in
     ".config/btop".source = "${dotfiles}/btop";
     ".config/nvim".source = "${dotfiles}/nvim";
     #".config/walker/themes".source = "${dotfiles}/walker/themes";
+    ".config/swayosd".source = "${dotfiles}/swayosd";
   };
 }
