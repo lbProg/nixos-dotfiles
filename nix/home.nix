@@ -15,6 +15,7 @@ in
     waybar
     neovim-remote
     librewolf
+    hyprsunset
   ];
 
   programs.git = {
