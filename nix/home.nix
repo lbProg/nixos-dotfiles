@@ -36,6 +36,8 @@ in
       if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
         exec uwsm start -S hyprland-uwsm.desktop
       fi
+
+      swayosd-server
     '';
     initExtra = ''
       source ~/nixos-dotfiles/default/bashrc
@@ -63,6 +65,8 @@ in
     package = pkgs.bibata-cursors;
     size = 24;
   };
+
+  services.swayosd.enable = true;
 
   home.sessionPath = [ "/home/lucien/nixos-dotfiles/bin" ];
 

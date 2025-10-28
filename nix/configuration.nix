@@ -72,7 +72,18 @@
     gcc
     nodejs
     brightnessctl
+  #  swayosd
   ];
+
+  #services.udev.packages = [ pkgs.swayosd ];
+
+  #systemd.services.swayosd-libinput-backend = {
+  #  script = ''
+  #    ${pkgs.swayosd}/bin/swayosd-libinput-backend
+  #  '';
+
+  #  wantedBy = [ "multi-user.target" ];
+  #};
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.05";
