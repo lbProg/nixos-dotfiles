@@ -47,31 +47,17 @@ in
   programs.walker = {
     enable = true;
     runAsService = true;
-    config = {
-      theme = "nixos-default";
-    };
+    config = builtins.fromTOML (builtins.readFile "${dotfiles}/walker/config.toml");
 
     themes = {
       "nixos-default" = {
-        style = builtins.readFile "${config.home.homeDirectory}/nixos-dotfiles/default/walker/style.css";
+        style = builtins.readFile "${config.home.homeDirectory}/nixos-dotfiles/default/walker/themes/nixos-default/style.css";
+        layouts = {
+          "layout" = builtins.readFile "${config.home.homeDirectory}/nixos-dotfiles/default/walker/themes/nixos-default/layout.xml";
+        };
       };
     };
   };
-
-  #services.elephant = {
-  #  enable = true;
-  #  runAsService = true;
-  #};
-
-  #systemd.user.services.walker = {
-  #  Install.WantedBy = [ "default.target" ];
-
-  #  Service.ExecStart = ''
-  #    ${pkgs.walker}/bin/walker walker --gapplication-service
-  #  '';
-  #};
-
-  # services.walker.enable = true;
 
   home.pointerCursor = {
     gtk.enable = true;
@@ -91,7 +77,7 @@ in
     ".config/waybar".source = "${dotfiles}/waybar";
     ".config/btop".source = "${dotfiles}/btop";
     ".config/nvim".source = "${dotfiles}/nvim";
-    #".config/walker/themes".source = "${dotfiles}/walker/themes";
+    # ".config/walker/config.toml".source = "${dotfiles}/walker/config.toml";
     ".config/swayosd".source = "${dotfiles}/swayosd";
   };
 }
