@@ -30,6 +30,8 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    #material-design-icons
+    #font-awesome
   ];
 
   # Enable sound.

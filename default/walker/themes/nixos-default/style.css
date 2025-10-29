@@ -5,7 +5,7 @@
 }
 
 * {
-  font-family: monospace;
+  font-family: "JetBrainsMono Nerd Font Mono", monospace;
   font-size: 18px;
   color: @text;
 }
