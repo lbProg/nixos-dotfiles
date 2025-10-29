@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 SOCKETS=$(find /tmp -type s -name "nvim*" 2>/dev/null)
 

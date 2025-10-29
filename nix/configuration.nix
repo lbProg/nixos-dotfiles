@@ -57,6 +57,7 @@
   environment.variables = {
     TERMINAL = "kitty";
     BROWSER = "librewolf";
+    EDITOR = "nvim";
   };
 
   programs.hyprland = {
