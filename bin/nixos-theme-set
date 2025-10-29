@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 THEMES_DIR="/home/lucien/.config/theming/themes/"
 CURRENT_THEME_DIR="/home/lucien/.config/theming/current/theme"
@@ -20,6 +20,7 @@ ln -nsf "/home/lucien/.config/theming/current/theme/neovim.lua" "/home/lucien/.c
 bash nixos-restart-app waybar
 
 hyprctl reload
+makoctl reload
 
 pkill -SIGUSR2 btop
 bash nixos-restart-nvim

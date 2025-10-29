@@ -43,6 +43,11 @@ in
     '';
   };
 
+  services.mako = {
+    enable = true;
+    extraConfig = builtins.readFile "${config.home.homeDirectory}/nixos-dotfiles/default/mako/core.ini";
+  };
+
   imports = [ inputs.walker.homeManagerModules.default ];
   programs.walker = {
     enable = true;
