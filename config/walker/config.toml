@@ -11,8 +11,7 @@ quick_activate = []
 [providers]
 default = [
   "desktopapplications",
-  "menus",
-  "websearch",
+  "menus"
 ] # providers to be queried by default
 
 [[providers.prefixes]]
@@ -30,10 +29,6 @@ provider = "symbols"
 [[providers.prefixes]]
 prefix = "="
 provider = "calc"
-
-[[providers.prefixes]]
-prefix = "@"
-provider = "websearch"
 
 [[providers.prefixes]]
 prefix = "$"

@@ -59,6 +59,23 @@ in
     };
   };
 
+  systemd.user.services.elephant-delayed = {
+    Unit = {
+      Description = "Delayed restart for Elephant to ensure socket exists";
+      After = [ "graphical-session.target" "default.target" ];
+    };
+
+    Service = {
+      Type = "oneshot";
+      ExecStartPre = "${pkgs.coreutils}/bin/sleep 5";
+      ExecStart = "${pkgs.systemd}/bin/systemctl --user restart elephant";
+    };
+
+    Install = {
+      WantedBy = [ "graphical-session.target" ];
+    };
+  };
+
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
