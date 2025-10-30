@@ -75,6 +75,8 @@
     gcc
     nodejs
     brightnessctl
+    libxkbcommon # For nixos-menu-keybindings
+    jq # Same
   #  swayosd
   ];
 
