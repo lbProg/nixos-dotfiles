@@ -12,7 +12,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos";
-  networking.networkmanager.enable = true;
+  # networking.networkmanager.enable = true;
 
   time.timeZone = "Europe/Paris";
 
@@ -23,7 +23,10 @@
   #   keyMap = "fr";
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
-  
+
+  # networking.wireless.enable = true;
+  networking.wireless.iwd.enable = true;
+
   hardware.bluetooth = {
     enable = true;
     settings = {
@@ -88,8 +91,11 @@
     jq # Same
     wiremix
     blueberry
+    impala
   #  swayosd
   ];
+
+  services.power-profiles-daemon.enable = true;
 
   #services.udev.packages = [ pkgs.swayosd ];
 

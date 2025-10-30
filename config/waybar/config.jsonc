@@ -42,7 +42,7 @@
     "format": " ",
     "return-type": "json",
     "exec": "echo '{}'",
-    "on-click": "omarchy-menu",
+    "on-click": "nixos-menu",
     "tooltip-format": "Global Menu\n\nSuper + Alt + Space"
   },
   "custom/update": {
@@ -76,7 +76,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "omarchy-launch-wifi"
+    "on-click": "nixos-launch-wifi"
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -91,7 +91,7 @@
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
     "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
     "interval": 5,
-    "on-click": "omarchy-menu power",
+    "on-click": "nixos-menu power",
     "states": {
       "warning": 20,
       "critical": 10
