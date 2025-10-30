@@ -40,8 +40,8 @@
   },
   "custom/nixos": {
     "format": " ",
-    "return-type": "json",
-    "exec": "echo '{}'",
+    // "return-type": "json",
+    // "exec": "echo '{}'",
     "on-click": "nixos-menu",
     "tooltip-format": "Global Menu\n\nSuper + Alt + Space"
   },
