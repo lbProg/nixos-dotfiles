@@ -23,6 +23,15 @@
   #   keyMap = "fr";
   #   useXkbConfig = true; # use xkb.options in tty.
   # };
+  
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        Experimental = true;
+      };
+    };
+  };
 
   services.xserver = {
     xkb.layout = "fr";
@@ -77,6 +86,8 @@
     brightnessctl
     libxkbcommon # For nixos-menu-keybindings
     jq # Same
+    wiremix
+    blueberry
   #  swayosd
   ];
 
