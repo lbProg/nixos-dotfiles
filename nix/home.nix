@@ -16,6 +16,7 @@ in
     neovim-remote
     librewolf
     hyprsunset
+    swaybg
   ];
 
   programs.git = {
@@ -41,6 +42,10 @@ in
     initExtra = ''
       source ~/nixos-dotfiles/default/bashrc
     '';
+  };
+
+  programs.hyprlock = {
+    enable = true;
   };
 
   services.mako = {
