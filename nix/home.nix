@@ -24,6 +24,7 @@ in
     satty
     wl-clipboard
     hyprpicker
+    gpu-screen-recorder
   ];
 
   programs.git = {

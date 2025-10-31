@@ -97,15 +97,18 @@
 
   services.power-profiles-daemon.enable = true;
 
-  #services.udev.packages = [ pkgs.swayosd ];
+  security.wrappers.gsr-kms-server = {
+    source = "${pkgs.gpu-screen-recorder}/bin/gsr-kms-server";
+    capabilities = "cap_sys_admin+ep";
+    owner = "root";
+    group = "root";
+    permissions = "0755";
+  };
 
-  #systemd.services.swayosd-libinput-backend = {
-  #  script = ''
-  #    ${pkgs.swayosd}/bin/swayosd-libinput-backend
-  #  '';
-
-  #  wantedBy = [ "multi-user.target" ];
-  #};
+  hardware.opengl.enable = true;
+  hardware.opengl.extraPackages = with pkgs; [
+    intel-media-driver  # iHD driver for VAAPI
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.05";
