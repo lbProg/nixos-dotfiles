@@ -25,6 +25,7 @@ in
     wl-clipboard
     hyprpicker
     gpu-screen-recorder
+    terminaltexteffects
   ];
 
   programs.git = {
