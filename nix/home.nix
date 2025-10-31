@@ -18,6 +18,11 @@ in
     hyprsunset
     swaybg
     hypridle
+    wayfreeze
+    slurp
+    grim
+    satty
+    wl-clipboard
   ];
 
   programs.git = {
