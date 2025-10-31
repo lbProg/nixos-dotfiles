@@ -23,6 +23,7 @@ in
     grim
     satty
     wl-clipboard
+    hyprpicker
   ];
 
   programs.git = {
