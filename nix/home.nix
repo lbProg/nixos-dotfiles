@@ -17,6 +17,7 @@ in
     librewolf
     hyprsunset
     swaybg
+    hypridle
   ];
 
   programs.git = {
