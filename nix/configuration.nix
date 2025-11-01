@@ -5,7 +5,7 @@
     [
       # ./hardware-configuration-vm-laptop-1.nix
       # ./hardware-configuration-vm-desktop.nix
-      ./hardware-configuration-grenoble.nix
+      /etc/nixos/hardware-configuration.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -40,6 +40,8 @@
     xkb.layout = "fr";
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
     #material-design-icons
@@ -56,7 +58,7 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
-
+  
   users.users.lucien = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
@@ -92,6 +94,7 @@
     wiremix
     blueberry
     impala
+    gsettings-qt
   #  swayosd
   ];
 

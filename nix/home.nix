@@ -2,6 +2,7 @@
 
 let
   dotfiles = config.lib.file.mkOutOfStoreSymlink "/home/lucien/nixos-dotfiles/config";
+  nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") { inherit pkgs; };
 in
 
 {
@@ -14,7 +15,6 @@ in
     nixpkgs-fmt
     waybar
     neovim-remote
-    librewolf
     hyprsunset
     swaybg
     hypridle
@@ -26,6 +26,16 @@ in
     hyprpicker
     gpu-screen-recorder
     terminaltexteffects
+
+    # My apps
+    R
+    positron-bin
+    obsidian
+    zotero
+    papers
+    loupe
+    nautilus
+    pika-backup
   ];
 
   programs.git = {
@@ -51,6 +61,13 @@ in
     initExtra = ''
       source ~/nixos-dotfiles/default/bashrc
     '';
+  };
+
+  programs.librewolf = {
+    enable = true;
+    settings = {
+      "privacy.resistFingerprinting" = false;
+    };
   };
 
   programs.hyprlock = {

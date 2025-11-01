@@ -27,3 +27,4 @@ makoctl reload
 pkill -SIGUSR2 btop
 nixos-restart-nvim
 nixos-theme-set-terminal
+nixos-theme-set-gnome
