@@ -1,4 +1,16 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
+
+# Connect to your user DBus (needed for gsettings)
+export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$UID/bus"
+
+# Detect GNOME schema path from Nix store
+# (gsettings-desktop-schemas must be installed)
+SCHEMA_DIR="/nix/store/d177qdbszw6wlmd1yahgk1mbafxbyqmm-gsettings-desktop-schemas-48.0/share/gsettings-schemas/gsettings-desktop-schemas-48.0/glib-2.0/schemas"
+if [[ ! -d "$SCHEMA_DIR" ]]; then
+  echo "Error: could not find GNOME schemas. Install gsettings-desktop-schemas first."
+  exit 1
+fi
+export GSETTINGS_SCHEMA_DIR="$SCHEMA_DIR"
 
 # Change gnome modes
 if [[ -f ~/.config/theming/current/theme/light.mode ]]; then

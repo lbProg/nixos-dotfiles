@@ -94,8 +94,8 @@
     wiremix
     blueberry
     impala
-    gsettings-qt
-  #  swayosd
+    glib
+    gsettings-desktop-schemas
   ];
 
   services.power-profiles-daemon.enable = true;

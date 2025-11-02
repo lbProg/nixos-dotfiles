@@ -13,6 +13,7 @@ if [[ ! -d "$THEME_PATH" ]]; then
 fi
 
 # Update theme symlinks
+find "$CURRENT_THEME_DIR" -type l -delete
 ln -nsf "$THEME_PATH/"*"" "$CURRENT_THEME_DIR"
 ln -nsf "/home/lucien/.config/theming/current/theme/btop.theme" "/home/lucien/.config/btop/themes/btop.theme"
 ln -nsf "/home/lucien/.config/theming/current/theme/neovim.lua" "/home/lucien/.config/nvim/lua/plugins/neovim.lua"
